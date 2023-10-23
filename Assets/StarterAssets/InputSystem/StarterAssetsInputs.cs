@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -13,6 +14,7 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
 		public bool aim;
+		public bool dance;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -48,6 +50,16 @@ namespace StarterAssets
         public void OnAim(InputValue value)
         {
 			AimInput(value.isPressed);
+        }
+
+		public void OnDance(InputValue value)
+		{
+			DanceInput(value.isPressed);
+		}
+
+        private void DanceInput(bool isPressed)
+        {
+			dance = isPressed;
         }
 #endif
 
